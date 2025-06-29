@@ -1,14 +1,14 @@
 from flask import Flask, render_template
 from threading import Thread
-import sys
-import os
+import sys, os
 
-# Inject path biar bisa impor dari root
+# Akses file dari root project
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from main import run_bot
 from keep_alive import keep_alive
 
+# Tentukan template_folder = ../templates/
 app = Flask(__name__, template_folder="../templates")
 
 @app.route("/")
